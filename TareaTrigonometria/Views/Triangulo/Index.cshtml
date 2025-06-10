@@ -1,0 +1,81 @@
+@model TareaTrigonometria.Models.TrianguloModel
+
+@{
+    ViewData["Title"] = "Triangle Calculator";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Formulario de entrada -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow rounded border-0">
+                <div class="card-header bg-primary text-white fw-bold">
+                    Ingresa los lados del triángulo
+                </div>
+                <div class="card-body p-4 bg-light">
+                    <form asp-action="CalcularDatos" method="post">
+                        <div class="form-group mb-4">
+                            <input asp-for="LadoA" class="form-control form-control-lg border-primary"
+                                placeholder="Lado A" required />
+                        </div>
+                        <div class="form-group mb-4">
+                            <input asp-for="LadoB" class="form-control form-control-lg border-primary"
+                                placeholder="Lado B" required />
+                        </div>
+                        <div class="form-group mb-4">
+                            <input asp-for="LadoC" class="form-control form-control-lg border-primary"
+                                placeholder="Lado C" required />
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-outline-primary w-80 fw-semibold ">Calcular</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resultados -->
+        <div class="col-md-6 mb-4">
+            <div class="card shadow rounded border-0">
+                <div class="card-header bg-white text-dark fw-bold border-bottom">
+                    Resultados del triángulo
+                </div>
+                <div class="card-body">
+                    @if (!(ViewData.ModelState.IsValid && Model?.Area > 0))
+                    {
+                        <!-- Error destacado arriba del card-body -->
+                        @if (ViewData["ErrorMessage"] != null)
+                        {
+                            <div class="alert alert-danger text-center fw-semibold rounded-3 mb-4">
+                                @ViewData["ErrorMessage"]
+                            </div>
+                        }
+                        <div class="d-flex flex-column gap-1 text-danger">
+                            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                            <span asp-validation-for="LadoA" class="text-danger"></span>
+                            <span asp-validation-for="LadoB" class="text-danger"></span>
+                            <span asp-validation-for="LadoC" class="text-danger"></span>
+                        </div>
+
+
+                    }
+
+                    @if (ViewData.ModelState.IsValid && Model?.Area > 0)
+                    {
+                        <ul class="list-unstyled">
+                            <li><strong>P =</strong> @Model.Perimetro u</li>
+                            <li><strong>S =</strong> @Model.Semiperimetro u</li>
+                            <li><strong>A =</strong> @Model.Area u²</li>
+                            <hr />
+                            <li><strong>Type:</strong> @Model.TipoTriangulo</li>
+                            <hr />
+                            <li><strong>α ≈</strong> @Model.AnguloA.ToString("0.##")°</li>
+                            <li><strong>β ≈</strong> @Model.AnguloB.ToString("0.##")°</li>
+                            <li><strong>γ ≈</strong> @Model.AnguloC.ToString("0.##")°</li>
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
