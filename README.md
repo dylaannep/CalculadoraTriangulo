@@ -23,17 +23,23 @@ Este proyecto fue desarrollado con ASP.NET Core MVC, C# y Bootstrap
 - Index.cshtml: Vista que contiene el formulario para ingresar los lados y mostrar los resultados.
 
 ## 🌐 Enlace al repositorio
+[GitHub - dylaannep/CalculadoraTriangulo](https://github.com/dylaannep/CalculadoraTriangulo.git)
+
 
 ## 🔍 Fuentes de consulta
+[Ley de Cosenos](https://openstax.org/books/precálculo-2ed/pages/8-2-triangulos-no-rectangulos-ley-de-cosenos)
+[Trigonometria](https://es.wikipedia.org/wiki/Trigonometría)
 
 ## 🤖 Prompts y respuestas de IA utilizadas
-¿Como capturo el mensaje de un usuario js con node?
-1. Primero instala el paquete (una sola vez):
-npm install prompt-sync
-2. Luego en tu archivo fib.js:
-const prompt = require('prompt-sync')();
-let palabraIngresada = prompt('Ingrese una palabra: ');
-console.log('Ingresaste:', palabraIngresada);
+¿Cómo se calcula el área del triángulo?
+Fórmula de Herón:
+Primero se calcula el semiperímetro
+Luego se utiliza la formula de Raiz(s * (s - a) * (s - b) * (s - c))
+
+Es necesario agregar la logica de las operaciones en el modelo o tambbien se puede en el controller
+Sí puedes hacer lógica en el controlador si es de flujo, pero la lógica de operaciones matemáticas como el cálculo del área, pero también puede estar en el modelo.
+
+
 
 ## 📄 Explicación Código
 - El usuario ingresa los lados A, B y C.
@@ -44,3 +50,10 @@ console.log('Ingresaste:', palabraIngresada);
 - El área con la fórmula de Herón
 - El tipo según igualdad de lados
 - Los ángulos usando la ley del coseno
+
+## 📄 Comandos de dotnet para crear la solución y el proyecto
+- Crear la solucion del proyecto: dotnet new sln -n Tarea2DylanEP
+- Crear el proyecto MVC: dotnet new mvc -o TareaTrigonometria
+- Agregar el proyecto a la solución: dotnet sln add TareaTrigonometria 
+- Entrar al directorio del proyecto: cd TareaTrigonometria  
+- Hacer pruebas con el proyecto terminado: dotnet run 

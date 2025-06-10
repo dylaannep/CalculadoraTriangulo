@@ -95,3 +95,4 @@ D:\2025\IICUATRIMESTRE\ProgramacionAvanzadaenWeb\Semana5\TareaTrigonometria\obj\
 D:\2025\IICUATRIMESTRE\ProgramacionAvanzadaenWeb\Semana5\TareaTrigonometria\obj\Debug\net9.0\TareaTrigonometria.pdb
 D:\2025\IICUATRIMESTRE\ProgramacionAvanzadaenWeb\Semana5\TareaTrigonometria\obj\Debug\net9.0\TareaTrigonometria.genruntimeconfig.cache
 D:\2025\IICUATRIMESTRE\ProgramacionAvanzadaenWeb\Semana5\TareaTrigonometria\obj\Debug\net9.0\ref\TareaTrigonometria.dll
+D:\2025\IICUATRIMESTRE\ProgramacionAvanzadaenWeb\Semana5\TareaTrigonometria\obj\Debug\net9.0\TareaTrigonometria.sourcelink.json

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TareaTrigonometria")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67a596278e61e995d7a5dbc49d0b9c09681ae0a3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56557db9fd168a6cf7de890500a7c4e782a799fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("TareaTrigonometria")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TareaTrigonometria")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
