@@ -24,12 +24,16 @@ public class TrianguloController : Controller
     {
         if (ModelState.IsValid)
         {
+            //Guardar los valores de los lados
             double a = triangulo.LadoA;
             double b = triangulo.LadoB;
             double c = triangulo.LadoC;
+            // Validacion  de desigualdad de triángulos
+            // Se debe de cumplir que la suma de dos lados debe ser mayor que el tercer lado
             if (a >= b + c || b >= a + c || c >= a + b)
             {
                 ViewData["ErrorMessage"] = "La suma de dos lados debe ser mayor que el tercer lado.";
+                // Retornar a la vista con el mensaje de error
                 return View("Index", triangulo);
             }
             // Cálculos
@@ -39,7 +43,7 @@ public class TrianguloController : Controller
             double s  = triangulo.Semiperimetro;
             triangulo.Area = Math.Sqrt(s * (s - a) * (s - b) * (s - c));
 
-            // Tipo
+            // Se determina el tipo de triángulo
             if (a == b && b == c)
                 triangulo.TipoTriangulo = "Equilátero";
             else if (a == b || b == c || a == c)
@@ -47,16 +51,18 @@ public class TrianguloController : Controller
             else
                 triangulo.TipoTriangulo = "Escaleno";
 
-            // Cálculo de ángulos
+            // Lllamada al método para calcular los ángulos
             CalcularAngulos(triangulo);
+            // Retornar a la vista con los datos calculados
             return View("Index", triangulo); // se recomienda pasar el modelo
         }
-
+        // Si el modelo no es válido, retornar a la vista con el modelo actual
         return View("Index", triangulo);
     }
 
     private void CalcularAngulos(TrianguloModel triangulo)
     {
+        // Guardar los valores de los lados
         double a = triangulo.LadoA;
         double b = triangulo.LadoB;
         double c = triangulo.LadoC;
